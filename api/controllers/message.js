@@ -90,6 +90,8 @@ exports.deleteMessage = (req, res, next) => {
     if (msg.sender.toHexString() === req.user.id) {
       msg.remove()
       res.status(200).json({ message: `message ID ${msg.sender.toHexString()}, from ${req.user.email} deleted` });
+    } else {
+      res.status(400).json({ message: `User  ${req.user.email} not allow to delete message ID: ${msg.sender.toHexString()}` });
     }
   }).catch(err => {
     res.status(500).json({
