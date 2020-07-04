@@ -13,7 +13,7 @@ REST api for messaging using express js and mongoDB
 
 ## Endpoints
 
-1. See messenger.postman_collection.json file
+1. See messenger.postman_collection-server.json file
 2. Import to postman
 
 ## Setup Requirements
