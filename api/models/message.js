@@ -21,10 +21,6 @@ const messageSchema = new Schema({
     type: String,
     required: true
   },
-  isReaded: {
-    type: Boolean,
-    default: false
-  },
   createdAt: {
     type: Date,
     default: Date.now

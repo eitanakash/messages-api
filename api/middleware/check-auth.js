@@ -7,9 +7,8 @@ module.exports = (req, res, next) => {
   try {
     const token = req.headers.authorization;
     const decoded = jwt.verify(token, process.env.JWT_KEY);
-    console.log('user', decoded);
     User.findOne({ email: decoded.email }).then((user) => {
-      console.log(`Logged in user found: ${user.email}`);
+      console.log(`Logged in user found, email ${user.email}, id: ${user.id} `);
       req.user = user
     }).then(() => {
       next()

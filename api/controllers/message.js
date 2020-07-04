@@ -25,14 +25,17 @@ exports.writeMessage = (req, res, next) => {
     })
 };
 
-exports.readMessage = (req, res, next) => {
-  Message.findOneAndUpdate({ receiver: req.user.id, isReaded: false }, { isReaded: true })
+exports.readMessage = async (req, res, next) => {
+  const msgID = await req.user.readMessage()
+
+  await Message.findOne({ _id: msgID }).populate('sender')
     .then(msg => {
       if (msg) {
         const message = {
           subject: msg.subject,
           message: msg.message,
-          createdAt: msg.createdAt
+          createdAt: msg.createdAt,
+          sender: msg.sender.email
         }
         res.status(200).json({ message })
       } else {
@@ -45,15 +48,14 @@ exports.readMessage = (req, res, next) => {
     })
 };
 
-exports.getAllMessages = (req, res, next) => {
-  Message.find({ receiver: req.user.id })
-    .select("message subject sender receiver isReaded")
-    .exec()
+exports.getAllMessages = async (req, res, next) => {
+  User.findOne({ _id: req.user.id })
+    .select('unreadInbox readInbox outbox -_id').populate('unreadInbox readInbox outbox')
     .then(messages => {
       if (messages) {
         res.status(200).json(messages)
       } else {
-        res.status(200).json({ message: 'No messages ):' })
+        res.status(200).json({ message: `No new messages ):` })
       }
     }).catch(err => {
       res.status(500).json({
@@ -63,12 +65,11 @@ exports.getAllMessages = (req, res, next) => {
 };
 
 exports.getAllUnreadMessages = (req, res, next) => {
-  Message.find({ receiver: req.user.id, isReaded: false })
-    .select("message subject sender receiver isReaded")
-    .exec()
+  User.findOne({ _id: req.user.id })
+    .select("unreadInbox").populate('unreadInbox')
     .then(messages => {
       if (messages) {
-        res.status(200).json(messages)
+        res.status(200).json(messages.unreadInbox)
       } else {
         res.status(200).json({ message: `No new messages from ${req.params.user} ):` })
       }
@@ -80,22 +81,15 @@ exports.getAllUnreadMessages = (req, res, next) => {
 };
 
 // Just sender (owner) can delete message
-exports.deleteMessage = (req, res, next) => {
-  Message.findOne({ _id: req.params.msgId }).then(msg => {
-    if (!msg) {
-      res.status(400).json({ message: 'Mesage ID not exist' })
-      return;
+exports.deleteMessage = async (req, res, next) => {
+  try {
+    const result = await req.user.deleteMessage(req.params.msgId);
+    if (result){
+      res.status(200).json({ message: `message ID ${req.params.msgId}, from ${result} of user: ${req.user.email} deleted` });
+    } else{
+      res.status(400).json({ message: `message ID ${req.params.msgId} not exist` });
     }
-    console.log(`msg sender: ${msg.sender} loggedIn user: ${req.user.id} receiver: ${msg.receiver}`);
-    if (msg.sender.toHexString() === req.user.id) {
-      msg.remove()
-      res.status(200).json({ message: `message ID ${msg.sender.toHexString()}, from ${req.user.email} deleted` });
-    } else {
-      res.status(400).json({ message: `User  ${req.user.email} not allow to delete message ID: ${msg.sender.toHexString()}` });
-    }
-  }).catch(err => {
-    res.status(500).json({
-      error: err.message
-    });
-  })
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 };

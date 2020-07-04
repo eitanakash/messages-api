@@ -1,0 +1,456 @@
+{
+	"info": {
+		"_postman_id": "30fcafa4-563a-49b9-a9ee-24d65e49877c",
+		"name": "messenger",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "post signup - local user 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"en1@gmail.com\",\n    \"password\": \"$%fgssd67\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post signup - local user 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"en2@gmail.com\",\n    \"password\": \"$%fgssd67\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post login - local 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"en1@gmail.com\",\n    \"password\": \"$%fgssd67\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post login - local 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"en2@gmail.com\",\n    \"password\": \"$%fgssd67\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "write message - local 1 => 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuMUBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwYmUxOWZmM2JmNzc1NmUzM2UwYzciLCJpYXQiOjE1OTM4ODQyMDIsImV4cCI6MTU5NDAxMzgwMn0.aNpTBogCkGvIOh4zSotS12tPjaJBxoCHUo28hz-r2Pg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"receiver\": \"en2@gmail.com\",\n    \"message\": \"msg test 4 \",\n    \"subject\": \"subject test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/message/write",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"message",
+						"write"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "write message - local 2 => 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuMkBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwYmUxZWZmM2JmNzc1NmUzM2UwYzgiLCJpYXQiOjE1OTM4ODQyMDYsImV4cCI6MTU5NDAxMzgwNn0.hs-NwrdY0y7Dglrr9F7seQarVLwJnhkoz1-RduNOhD8"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"receiver\": \"en1@gmail.com\",\n    \"message\": \"message3\",\n    \"subject\": \"subject tesr\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/message/write",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"message",
+						"write"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "write message - local 3 => 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuM0BnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwODI1YWYxY2NiMDEyM2RlYzY5NWIiLCJpYXQiOjE1OTM4Njg5MDAsImV4cCI6MTU5Mzk5ODUwMH0.t3nH_IXoqUEVmmo6q2-Dnw2gttXdp183SIp9t0BTD-I"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"receiver\": \"en1@gmail.com\",\n    \"message\": \"message31\",\n    \"subject\": \"subject tesr\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/message/write",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"message",
+						"write"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read one messge - local 1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuMUBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwYmUxOWZmM2JmNzc1NmUzM2UwYzciLCJpYXQiOjE1OTM4ODQyMDIsImV4cCI6MTU5NDAxMzgwMn0.aNpTBogCkGvIOh4zSotS12tPjaJBxoCHUo28hz-r2Pg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/message/read",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"message",
+						"read"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "123",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read one messge - local 2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuMkBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwYmUxZWZmM2JmNzc1NmUzM2UwYzgiLCJpYXQiOjE1OTM4ODQyMDYsImV4cCI6MTU5NDAxMzgwNn0.hs-NwrdY0y7Dglrr9F7seQarVLwJnhkoz1-RduNOhD8"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/message/read",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"message",
+						"read"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "123",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all messges 1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuMUBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwYmUxOWZmM2JmNzc1NmUzM2UwYzciLCJpYXQiOjE1OTM4ODQyMDIsImV4cCI6MTU5NDAxMzgwMn0.aNpTBogCkGvIOh4zSotS12tPjaJBxoCHUo28hz-r2Pg"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/message/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"message",
+						"all"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "123",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all messges 2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuMkBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwYmUxZWZmM2JmNzc1NmUzM2UwYzgiLCJpYXQiOjE1OTM4ODQyMDYsImV4cCI6MTU5NDAxMzgwNn0.hs-NwrdY0y7Dglrr9F7seQarVLwJnhkoz1-RduNOhD8"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/message/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"message",
+						"all"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "123",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all unread msgs 1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuMUBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwYmUxOWZmM2JmNzc1NmUzM2UwYzciLCJpYXQiOjE1OTM4ODQyMDIsImV4cCI6MTU5NDAxMzgwMn0.aNpTBogCkGvIOh4zSotS12tPjaJBxoCHUo28hz-r2Pg"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/message/all-unread",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"message",
+						"all-unread"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "123",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all unread msgs 2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuMkBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwYmUxZWZmM2JmNzc1NmUzM2UwYzgiLCJpYXQiOjE1OTM4ODQyMDYsImV4cCI6MTU5NDAxMzgwNn0.hs-NwrdY0y7Dglrr9F7seQarVLwJnhkoz1-RduNOhD8"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/message/all-unread",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"message",
+						"all-unread"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "123",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete mesage with id 1",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuMUBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwYmUxOWZmM2JmNzc1NmUzM2UwYzciLCJpYXQiOjE1OTM4ODQyMDIsImV4cCI6MTU5NDAxMzgwMn0.aNpTBogCkGvIOh4zSotS12tPjaJBxoCHUo28hz-r2Pg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/message/remove/5f00bfb514240876fc1e496d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"message",
+						"remove",
+						"5f00bfb514240876fc1e496d"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
