@@ -1,4 +1,4 @@
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const Message = require('../models/message');
 const User = require('../models/user');
 
@@ -17,7 +17,7 @@ exports.writeMessage = (req, res, next) => {
     }).then((msg) => {
       receiver.addToInbox(msg.id)
       req.user.addToOutbox(msg.id)
-      return res.status(200).json({ messages: 'message sent succeccfully', id: msg.id })
+      return res.status(200).json({ messages: 'message sent successfully', id: msg.id })
     }).catch(err => {
       res.status(500).json({
         error: err.message

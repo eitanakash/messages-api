@@ -13,26 +13,21 @@ const userSchema = new Schema({
     match: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
   },
   password: { type: String, required: true },
-  messages: {
-    inbox: [
-      { type: Schema.Types.ObjectId, ref: 'Message', require: true }
-    ],
-    outbox: [
-      { type: Schema.Types.ObjectId, ref: 'Message', require: true }
-    ]
-  }
+  unreadInbox: [{ type: Schema.Types.ObjectId, ref: 'Message', require: true }],
+  readInbox: [{ type: Schema.Types.ObjectId, ref: 'Message', require: true }],
+  outbox: [{ type: Schema.Types.ObjectId, ref: 'Message', require: true }]
 });
 
 userSchema.methods.addToInbox = function (message) {
-  const inMessages = [...this.messages.inbox];
+  const inMessages = [...this.unreadInbox];
   inMessages.push(message);
-  this.messages.inbox = inMessages;
+  this.unreadInbox = inMessages;
   return this.save();
 }
 userSchema.methods.addToOutbox = function (message) {
-  const outMessages = [...this.messages.outbox];
+  const outMessages = [...this.outbox];
   outMessages.push(message);
-  this.messages.outbox = outMessages;
+  this.outbox = outMessages;
   return this.save();
 }
 
