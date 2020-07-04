@@ -48,7 +48,8 @@ REST api for messaging using express js and mongoDB
 - Clean
 - Check complexity and improve
 - Add validation for post body
-- Add enum to more organized and robust code 
+- Add enum to more organized and robust code
+- add comments
 
 
 

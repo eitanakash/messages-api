@@ -38,7 +38,7 @@
 			"response": []
 		},
 		{
-			"name": "post signup - local user 2",
+			"name": "post signup - user 2",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -70,7 +70,7 @@
 			"response": []
 		},
 		{
-			"name": "post login - local 1",
+			"name": "post login - 1",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -134,19 +134,19 @@
 			"response": []
 		},
 		{
-			"name": "write message - local 1 => 2",
+			"name": "write message -  1 => 2",
 			"request": {
 				"method": "POST",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuMUBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwZTA4YmRmMmNiYzNjMzJkNDY5ZTMiLCJpYXQiOjE1OTM4OTMwOTgsImV4cCI6MTU5NDAyMjY5OH0.KOtZa5ngWkxxl6o_EcgX78PGCL0al7Np2oKY-Y8MAiM",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuMUBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwZjRmOTNjNGFhMjQwOGE1OTllYjIiLCJpYXQiOjE1OTM4OTgzMTksImV4cCI6MTU5MzkwMTkxOX0.6aiK-BMZ1n1WOETVqlJfCGgxyxVTGPngsnRgCDpD5pA",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"receiver\": \"en2@gmail.com\",\n    \"message\": \"msg test 4 \",\n    \"subject\": \"subject test\"\n}",
+					"raw": "{\n    \"receiver\": \"en1@gmail.com\",\n    \"message\": \"msg test 2\",\n    \"subject\": \"subject 1 => 2\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -172,19 +172,19 @@
 			"response": []
 		},
 		{
-			"name": "write message - local 2 => 1",
+			"name": "write message -  2 => 1",
 			"request": {
 				"method": "POST",
 				"header": [
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuMkBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwYmUxZWZmM2JmNzc1NmUzM2UwYzgiLCJpYXQiOjE1OTM4ODQyMDYsImV4cCI6MTU5NDAxMzgwNn0.hs-NwrdY0y7Dglrr9F7seQarVLwJnhkoz1-RduNOhD8"
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuMkBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwZjU0MTNjNGFhMjQwOGE1OTllYjMiLCJpYXQiOjE1OTM4OTgzMjgsImV4cCI6MTU5MzkwMTkyOH0.6ZIm__lxUyxeCUTqL8JYw1im6hUB4f4DSyhY73LqfO0"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"receiver\": \"en1@gmail.com\",\n    \"message\": \"message3\",\n    \"subject\": \"subject tesr\"\n}",
+					"raw": "{\n    \"receiver\": \"en1@gmail.com\",\n    \"message\": \"message 1\",\n    \"subject\": \"subject user 2 => 1\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -210,14 +210,14 @@
 			"response": []
 		},
 		{
-			"name": "read one messge - local 1",
+			"name": "read one messge - 1",
 			"request": {
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuMUBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwYmUxOWZmM2JmNzc1NmUzM2UwYzciLCJpYXQiOjE1OTM4ODQyMDIsImV4cCI6MTU5NDAxMzgwMn0.aNpTBogCkGvIOh4zSotS12tPjaJBxoCHUo28hz-r2Pg",
-						"type": "text"
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuMUBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwZjRmOTNjNGFhMjQwOGE1OTllYjIiLCJpYXQiOjE1OTM4OTgzMTksImV4cCI6MTU5MzkwMTkxOX0.6aiK-BMZ1n1WOETVqlJfCGgxyxVTGPngsnRgCDpD5pA"
 					}
 				],
 				"url": {
@@ -246,14 +246,14 @@
 			"response": []
 		},
 		{
-			"name": "read one messge - local 2",
+			"name": "read one messge - 2",
 			"request": {
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuMkBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwYmUxZWZmM2JmNzc1NmUzM2UwYzgiLCJpYXQiOjE1OTM4ODQyMDYsImV4cCI6MTU5NDAxMzgwNn0.hs-NwrdY0y7Dglrr9F7seQarVLwJnhkoz1-RduNOhD8"
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuMkBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwZjU0MTNjNGFhMjQwOGE1OTllYjMiLCJpYXQiOjE1OTM4OTgzMjgsImV4cCI6MTU5MzkwMTkyOH0.6ZIm__lxUyxeCUTqL8JYw1im6hUB4f4DSyhY73LqfO0"
 					}
 				],
 				"url": {
@@ -289,7 +289,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuMUBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwYmUxOWZmM2JmNzc1NmUzM2UwYzciLCJpYXQiOjE1OTM4ODQyMDIsImV4cCI6MTU5NDAxMzgwMn0.aNpTBogCkGvIOh4zSotS12tPjaJBxoCHUo28hz-r2Pg"
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuMUBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwZjRmOTNjNGFhMjQwOGE1OTllYjIiLCJpYXQiOjE1OTM4OTgzMTksImV4cCI6MTU5MzkwMTkxOX0.6aiK-BMZ1n1WOETVqlJfCGgxyxVTGPngsnRgCDpD5pA"
 					}
 				],
 				"url": {
@@ -325,7 +325,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuMkBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwYmUxZWZmM2JmNzc1NmUzM2UwYzgiLCJpYXQiOjE1OTM4ODQyMDYsImV4cCI6MTU5NDAxMzgwNn0.hs-NwrdY0y7Dglrr9F7seQarVLwJnhkoz1-RduNOhD8"
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuMkBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwZjU0MTNjNGFhMjQwOGE1OTllYjMiLCJpYXQiOjE1OTM4OTgzMjgsImV4cCI6MTU5MzkwMTkyOH0.6ZIm__lxUyxeCUTqL8JYw1im6hUB4f4DSyhY73LqfO0"
 					}
 				],
 				"url": {
@@ -361,7 +361,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuMUBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwYmUxOWZmM2JmNzc1NmUzM2UwYzciLCJpYXQiOjE1OTM4ODQyMDIsImV4cCI6MTU5NDAxMzgwMn0.aNpTBogCkGvIOh4zSotS12tPjaJBxoCHUo28hz-r2Pg"
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuMUBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwZjRmOTNjNGFhMjQwOGE1OTllYjIiLCJpYXQiOjE1OTM4OTgzMTksImV4cCI6MTU5MzkwMTkxOX0.6aiK-BMZ1n1WOETVqlJfCGgxyxVTGPngsnRgCDpD5pA"
 					}
 				],
 				"url": {
@@ -397,7 +397,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuMkBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwYmUxZWZmM2JmNzc1NmUzM2UwYzgiLCJpYXQiOjE1OTM4ODQyMDYsImV4cCI6MTU5NDAxMzgwNn0.hs-NwrdY0y7Dglrr9F7seQarVLwJnhkoz1-RduNOhD8"
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuMkBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwZjU0MTNjNGFhMjQwOGE1OTllYjMiLCJpYXQiOjE1OTM4OTgzMjgsImV4cCI6MTU5MzkwMTkyOH0.6ZIm__lxUyxeCUTqL8JYw1im6hUB4f4DSyhY73LqfO0"
 					}
 				],
 				"url": {
@@ -432,12 +432,12 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuMUBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwYmUxOWZmM2JmNzc1NmUzM2UwYzciLCJpYXQiOjE1OTM4ODQyMDIsImV4cCI6MTU5NDAxMzgwMn0.aNpTBogCkGvIOh4zSotS12tPjaJBxoCHUo28hz-r2Pg",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuMUBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwZjRmOTNjNGFhMjQwOGE1OTllYjIiLCJpYXQiOjE1OTM4OTgzMTksImV4cCI6MTU5MzkwMTkxOX0.6aiK-BMZ1n1WOETVqlJfCGgxyxVTGPngsnRgCDpD5pA",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://46.101.159.93:3000/message/remove/5f00bfb514240876fc1e496d",
+					"raw": "http://46.101.159.93:3000/message/remove/5f00f58c3c4aa2408a599eb3",
 					"protocol": "http",
 					"host": [
 						"46",
@@ -449,7 +449,217 @@
 					"path": [
 						"message",
 						"remove",
-						"5f00bfb514240876fc1e496d"
+						"5f00f58c3c4aa2408a599eb3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post signup - user 3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"en3@gmail.com\",\n    \"password\": \"123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://46.101.159.93:3000/user/signup",
+					"protocol": "http",
+					"host": [
+						"46",
+						"101",
+						"159",
+						"93"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post login - 3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"en3@gmail.com\",\n    \"password\": \"123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://46.101.159.93:3000/user/login",
+					"protocol": "http",
+					"host": [
+						"46",
+						"101",
+						"159",
+						"93"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "write message - 3 => 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuM0BnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwZmExYzNjNGFhMjQwOGE1OTllYzQiLCJpYXQiOjE1OTM4OTk1ODcsImV4cCI6MTU5MzkwMzE4N30.Bty-UxgjSU6-a71jKq9A_QC7dzIWDGobssHfJHgBCSU"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"receiver\": \"en1@gmail.com\",\n    \"message\": \"msg test 7\",\n    \"subject\": \"subject 3 => 1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://46.101.159.93:3000/message/write",
+					"protocol": "http",
+					"host": [
+						"46",
+						"101",
+						"159",
+						"93"
+					],
+					"port": "3000",
+					"path": [
+						"message",
+						"write"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read one messge - 3",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuM0BnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwZmExYzNjNGFhMjQwOGE1OTllYzQiLCJpYXQiOjE1OTM4OTk1ODcsImV4cCI6MTU5MzkwMzE4N30.Bty-UxgjSU6-a71jKq9A_QC7dzIWDGobssHfJHgBCSU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://46.101.159.93:3000/message/read",
+					"protocol": "http",
+					"host": [
+						"46",
+						"101",
+						"159",
+						"93"
+					],
+					"port": "3000",
+					"path": [
+						"message",
+						"read"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "123",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all messges 3",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuM0BnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwZmExYzNjNGFhMjQwOGE1OTllYzQiLCJpYXQiOjE1OTM4OTk1ODcsImV4cCI6MTU5MzkwMzE4N30.Bty-UxgjSU6-a71jKq9A_QC7dzIWDGobssHfJHgBCSU"
+					}
+				],
+				"url": {
+					"raw": "http://46.101.159.93:3000/message/all",
+					"protocol": "http",
+					"host": [
+						"46",
+						"101",
+						"159",
+						"93"
+					],
+					"port": "3000",
+					"path": [
+						"message",
+						"all"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "123",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all unread msgs 3",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuM0BnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZjAwZmExYzNjNGFhMjQwOGE1OTllYzQiLCJpYXQiOjE1OTM4OTk1ODcsImV4cCI6MTU5MzkwMzE4N30.Bty-UxgjSU6-a71jKq9A_QC7dzIWDGobssHfJHgBCSU"
+					}
+				],
+				"url": {
+					"raw": "http://46.101.159.93:3000/message/all-unread",
+					"protocol": "http",
+					"host": [
+						"46",
+						"101",
+						"159",
+						"93"
+					],
+					"port": "3000",
+					"path": [
+						"message",
+						"all-unread"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "123",
+							"disabled": true
+						}
 					]
 				}
 			},
