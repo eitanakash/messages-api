@@ -5,13 +5,13 @@ const User = require("../models/user");
 require("dotenv").config();
 
 
-exports.user_signup = (req, res, next) => {
+exports.userSignup = (req, res, next) => {
   User.find({ email: req.body.email })
     .exec()
     .then(user => {
       if (user.length >= 1) {
         return res.status(409).json({
-          message: "Mail exists"
+          message: "email address already exists"
         });
       } else {
         bcrypt.hash(req.body.password, 10, (err, hash) => {
@@ -43,7 +43,7 @@ exports.user_signup = (req, res, next) => {
     });
 };
 
-exports.user_login = (req, res, next) => {
+exports.userLogin = (req, res, next) => {
   User.find({ email: req.body.email })
     .exec()
     .then(user => {
