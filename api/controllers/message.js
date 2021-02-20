@@ -84,9 +84,9 @@ exports.getAllUnreadMessages = (req, res, next) => {
 exports.deleteMessage = async (req, res, next) => {
   try {
     const result = await req.user.deleteMessage(req.params.msgId);
-    if (result){
+    if (result) {
       res.status(200).json({ message: `message ID ${req.params.msgId}, from ${result} of user: ${req.user.email} deleted` });
-    } else{
+    } else {
       res.status(400).json({ message: `message ID ${req.params.msgId} not exist` });
     }
   } catch (err) {

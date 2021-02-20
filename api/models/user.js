@@ -23,12 +23,14 @@ userSchema.methods.addToInbox = function (message) {
   this.unreadInbox = inMessages;
   return this.save();
 }
+
 userSchema.methods.addToOutbox = function (message) {
   const messagesIds = [...this.outbox];
   messagesIds.push(message);
   this.outbox = messagesIds;
   return this.save();
 }
+
 userSchema.methods.readMessage = function () {
   const unreadeaMessages = [...this.unreadInbox];
   const readedMessages = [...this.readInbox];
