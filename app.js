@@ -6,7 +6,6 @@ const mongoose = require('mongoose');
 
 const userRoutes = require('./api/routes/user');
 const messageRoutes = require('./api/routes/message.js');
-const filesRoutes = require('./api/routes/files.js');
 require('dotenv').config();
 
 mongoose.connect(
@@ -37,7 +36,6 @@ app.use((req, res, next) => {
 // Routes which should handle requests
 app.use('/user', userRoutes);
 app.use('/message', messageRoutes);
-app.use('/files', filesRoutes);
 
 app.use((req, res, next) => {
   const error = new Error(`Not found | Invalid url path: ${req.headers.host}${req.url}`);
